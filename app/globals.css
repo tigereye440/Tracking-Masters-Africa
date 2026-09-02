@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors — pulled from the TMA logo */
+  --color-brand-maroon: #7A1E1E;   /* primary — logo wordmark, headers */
+  --color-brand-charcoal: #2A2A28; /* secondary — text, dark sections */
+  --color-brand-cream: #F5F3EE;    /* base background */
+  --color-brand-red: #C0392B;      /* accent — CTAs only */
+  --color-brand-steel: #8A8A82;    /* neutral — borders, secondary text */
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  @apply bg-brand-cream text-brand-charcoal antialiased;
+}
+
+/* Keep line lengths readable on long-form content like blog posts and FAQs */
+.prose-content {
+  @apply max-w-prose mx-auto;
+}
+
+/* Visible keyboard focus everywhere — required for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7A1E1E;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

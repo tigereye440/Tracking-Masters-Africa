@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss" with { "resolution-mode": "import" };
 
 const config: Config = {
   content: [

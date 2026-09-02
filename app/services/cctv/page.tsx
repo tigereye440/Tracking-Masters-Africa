@@ -19,14 +19,14 @@ export default function CctvInstallationPage() {
                     href="/contact"
                     className="mt-6 inline-block rounded-md bg-brand-red px-6 py-3 tex-sm font-medium text-brand-cream hover:bg-brand-red/90">
                         Request a free assessment
-                    </Link>
+                </Link>
             </section>
 
             <section className="mx-auto max-w-3xl px-6 py-12">
                 <h2 className="text-lg font-medium text-brand-charcoal">Every camera includes</h2>
                 <div className="mt-4 flex-flex-wrap-gap-2">
                     {baseFeatures.map((feature) => (
-                        <span className="rounded-full border border-brand-steel/30"
+                        <span className="rounded-full border border-brand-steel/30 mx-3 px-1"
                         >
                             {feature}
                         </span>
@@ -53,6 +53,12 @@ export default function CctvInstallationPage() {
                     <CameraCard key={pkg.name} pkg={pkg} />
                 ))}
                 </div>
+
+                <Link
+                    href="/contact"
+                    className="mt-6 inline-block rounded-md bg-brand-red px-6 py-3 tex-sm font-medium text-brand-cream hover:bg-brand-red/90">
+                        Explore our catalogue
+                </Link>
             </section>
 
             <CtaBand />

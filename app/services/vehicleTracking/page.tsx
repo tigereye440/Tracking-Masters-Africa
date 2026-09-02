@@ -35,9 +35,6 @@ export default function VehicleTrackingPage() {
 
       <section className="mx-auto max-w-3xl px-6 pb-14">
         <h2 className="text-lg font-medium text-brand-charcoal">Choose your device</h2>
-        <p className="mt-1 text-sm text-brand-steel">
-          Only the X3 includes fuel capacity monitoring.
-        </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           {devices.map((device) => (
             <DeviceCard key={device.id} device={device} />

@@ -23,6 +23,7 @@ export type Device = {
     vehicleType: string;
     features: string[];
     hasFuelMonitoring: boolean; 
+    service: string
 };
 
 export const devices: Device[] = [
@@ -31,24 +32,42 @@ export const devices: Device[] = [
         vehicleType: "Motorbikes, tricycles",
         features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "SOS alarm"],
         hasFuelMonitoring: false,
+        service: "tracking"
     },
     {
         id: "901AL",
         vehicleType: "Cars",
         features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "ACC/ignition detection"],
         hasFuelMonitoring: false,
+        service: "tracking"
     },
     {
         id: "906",
         vehicleType: "Cars",
         features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "SOS alarm", "ACC/ignition detection"],
         hasFuelMonitoring: false,
+        service: "tracking"
     },
     {
         id: "X3",
         vehicleType: "Cars",
         features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "SOS alarm", "ACC/ignition detection", "Fuel level monitoring"],
         hasFuelMonitoring: true,
+        service: "tracking"
     },
+    {
+        id: "JC120",
+        vehicleType: "Cars",
+        features: ['Real time video feed', "180 degree wide view", "Colission detection", "SOS Alarm", "Driver Monitoring"],
+        hasFuelMonitoring: false,
+        service: "dashcam"
+    },
+        {
+        id: "JC400",
+        vehicleType: "Cars",
+        features: ['Real time video feed', "360 degree wide view", "Colission detection", "SOS Alarm", "Driver Monitoring"],
+        hasFuelMonitoring: false,
+        service: "dashcam"
+    }
 ]
 

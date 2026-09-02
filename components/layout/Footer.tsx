@@ -30,7 +30,7 @@ export default function Footer() {
               Tracking Masters Africa
             </span>
           </div>
-          <p className="text-xs text-brand-steel">Kumasi &middot; Accra &middot; Nationwide</p>
+          <p className="text-xs text-brand-steel">Kumasi &middot; Techiman &middot; Accra &middot; Nationwide</p>
         </div>
 
         <div className="flex flex-col gap-2 text-sm text-brand-cream/80">

@@ -1,4 +1,4 @@
-import { Check, Fuel } from "lucide-react";
+import { Check, Fuel, Video, Navigation } from "lucide-react";
 import type { Device } from "../../lib/data/vehicleTracking"
 import { features } from "process";
 
@@ -13,6 +13,7 @@ export default function DeviceCard({ device }: { device: Device }) {
                         Fuel monitoring
                     </span>
                 )}
+                {device.service == "tracking" ? <Navigation size={13} className=" shrink-0 text-brand-maroon" /> : <Video size={13} className=" shrink-0 text-brand-maroon" />}
             </div>
             <p className="mt-1 text-xs text-brand-steel">{device.vehicleType}</p>
             <ul className="mt-3 flex-flex-col gap-1 5">

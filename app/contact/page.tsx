@@ -1,5 +1,6 @@
 import ContactForm from "@/components/contact/ContactForm";
 import ContactInfo from "@/components/contact/ContactInfo";
+import LocationsMap from "@/components/contact/LocationsMap";
 
 export default function ContactPage() {
     return (
@@ -12,6 +13,11 @@ export default function ContactPage() {
             <div className="mt-10 grid gap-10 sm:grid-cols-[1.3fr_1fr]">
                 <ContactForm />
                 <ContactInfo />
+            </div>
+
+            <div className="mt-10">
+                <h2 className="mb-3 text-lg font-medium text-brand-charcoal">Our locations</h2>
+                <LocationsMap />
             </div>
         </section>
     )

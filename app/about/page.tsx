@@ -1,6 +1,6 @@
-import StatsBand from "../../components/home/StatsBand";
-import CtaBand from "../../components/home/CtaBand";
-import { values } from "../../lib/data/about";
+import StatsBand from "@/components/home/StatsBand";
+import CtaBand from "@/components/home/CtaBand";
+import { values } from "@/lib/data/about";
 
 export default function AboutPage() {
   return (

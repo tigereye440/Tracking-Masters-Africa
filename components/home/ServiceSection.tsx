@@ -1,5 +1,5 @@
-import { services } from "../../lib/data/services";
-import ServiceCard from "./ServiceCard";
+import { services } from "@/lib/data/services";
+import ServiceCard from "@/components/home/ServiceCard";
 
 export default function ServiceSection() {
     return (

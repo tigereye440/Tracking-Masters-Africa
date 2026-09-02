@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { FaWhatsapp, FaTiktok, FaXTwitter } from "react-icons/fa6";
-import { Tiktok, WhatsApp } from "../../lib/data/hadles";
+import { Tiktok, WhatsApp } from "@/lib/data/handles";
 
 const socialLinks = [
-  { href: `https://wa.me/${WhatsApp}`, label: "WhatsApp", Icon: FaWhatsapp },
-  { href: `https://www.tiktok.com/${Tiktok}`, label: "TikTok", Icon: FaTiktok },
+  { href: `https://wa.me/${WhatsApp.name}`, label: "WhatsApp", Icon: FaWhatsapp },
+  { href: `https://www.tiktok.com/${Tiktok.name}`, label: "TikTok", Icon: FaTiktok },
   { href: "https://x.com/YOUR_HANDLE", label: "X", Icon: FaXTwitter },
 ];
 

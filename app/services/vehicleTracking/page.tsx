@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { subServices, devices } from "../../../lib/data/vehicleTracking";
-import SubServiceCard from "../../../components/services/SubServiceCard";
-import DeviceCard from "../../../components/services/DeviceCard";
-import CtaBand from "../../../components/home/CtaBand";
+import { subServices, devices } from "@/lib/data/vehicleTracking";
+import SubServiceCard from "@/components/services/subServiceCard";
+import DeviceCard from "@/components/services/DeviceCard";
+import CtaBand from "@/components/home/CtaBand";
 
 export default function VehicleTrackingPage() {
   return (
@@ -28,7 +28,7 @@ export default function VehicleTrackingPage() {
         <h2 className="text-lg font-medium text-brand-charcoal">What's included</h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
           {subServices.map((subService) => (
-            <SubServiceCard key={subService.name} subService={subService} />
+            <SubServiceCard key={subService.description} subService={subService} />
           ))}
         </div>
       </section>

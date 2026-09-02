@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
-import type { Faq } from "../../lib/data/faqs";
+import type { Faq } from "@/lib/data/faqs";
 
 export default function FaqItem({ faq }: { faq: Faq }) {
   const [open, setOpen] = useState(false);

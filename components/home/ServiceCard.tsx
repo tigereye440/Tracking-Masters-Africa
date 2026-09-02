@@ -1,6 +1,6 @@
 import Link from "next/link"
-import type { Service } from "../../lib/data/services"
-import ImagePlaceholder from "../ui/ImagePlaceholder" 
+import type { Service } from "@/lib/data/services"
+import ImagePlaceholder from "@/components/ui/ImagePlaceholder" 
 
 export default function ServiceCard({ service }: { service: Service }) {
     return (

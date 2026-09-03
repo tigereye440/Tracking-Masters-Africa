@@ -1,3 +1,5 @@
+
+
 const stats = [
   { value: "10+", label: "Years in operation" },
   { value: "2,000+", label: "Installations" },
@@ -16,6 +18,7 @@ export default function StatsBand() {
           </div>
         ))}
       </div>
+
     </section>
   );
 }

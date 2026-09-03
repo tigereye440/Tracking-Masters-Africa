@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { offerings } from "../../../lib/data/solarPower";
+import { offerings } from "../../../lib/data/solar-power";
 import CtaBand from "../../../components/home/CtaBand";
 
-export default function SolarPowerPage() {
+export default function solarPowerPage() {
   return (
     <>
       <section className="bg-brand-charcoal px-6 py-14 text-center">
@@ -33,6 +33,16 @@ export default function SolarPowerPage() {
           ))}
         </div>
       </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-14">
+        <Link
+          href="/catalogue?service=solar-power"
+          className="mt-6 inline-block rounded-md border border-brand-maroon px-6 py-3 text-sm font-medium text-brand-maroon hover:bg-brand-maroon/5"
+        >
+          Explore our catalogue
+        </Link>
+      </section>
+
 
       <CtaBand />
     </>

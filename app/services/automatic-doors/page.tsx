@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { keyFeatures, motorTiers } from "../../../lib/data/automaticDoors"
+import { keyFeatures, motorTiers } from "../../../lib/data/automatic-doors"
 import CtaBand from "../../../components/home/CtaBand";
 
-export default function AutomaticDoorsPage() {
+export default function automaticDoorsPage() {
   return (
     <>
       <section className="bg-brand-charcoal px-6 py-14 text-center">
@@ -46,6 +46,12 @@ export default function AutomaticDoorsPage() {
             </div>
           ))}
         </div>
+        <Link
+          href="/catalogue?service=automatic-doors"
+          className="mt-6 inline-block rounded-md border border-brand-maroon px-6 py-3 text-sm font-medium text-brand-maroon hover:bg-brand-maroon/5"
+        >
+          Explore our catalogue
+        </Link>
       </section>
 
       <CtaBand />

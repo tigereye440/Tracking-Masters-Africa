@@ -1,10 +1,13 @@
+"use client"
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { subServices, devices } from "@/lib/data/vehicleTracking";
+import { subServices, devices } from "@/lib/data/vehicle-tracking";
 import SubServiceCard from "@/components/services/subServiceCard";
 import DeviceCard from "@/components/services/DeviceCard";
 import CtaBand from "@/components/home/CtaBand";
 
-export default function VehicleTrackingPage() {
+export default function vehicleTrackingPage() {
   return (
     <>
       <section className="bg-brand-charcoal px-6 py-14 text-center">
@@ -40,6 +43,14 @@ export default function VehicleTrackingPage() {
             <DeviceCard key={device.id} device={device} />
           ))}
         </div>
+      </section>
+      <section className="mx-auto max-w-3xl px-6 pb-14">
+              <Link
+        href="/catalogue?service=vehicle-tracking"
+        className="mt-6 inline-block rounded-md border bacground-brand-maroon px-6 py-3 text-sm font-medium text-brand-maroon hover:bg-brand-maroon/5"
+      >
+        Explore our catalogue
+      </Link>
       </section>
 
       <CtaBand />

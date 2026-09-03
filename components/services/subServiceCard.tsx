@@ -1,4 +1,4 @@
-import type { SubService } from "../../lib/data/vehicleTracking";
+import type { SubService } from "../../lib/data/vehicle-tracking";
 
 export default function SubServiceCard({ subService }: { subService: SubService }) {
   return (

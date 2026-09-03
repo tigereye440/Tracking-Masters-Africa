@@ -8,7 +8,7 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "vehicleTracking",
+    slug: "vehicle-tracking",
     name: "Vehicle tracking",
     shortDescription:
       "Real-time GPS, geo-fence and speed alerts for cars, fleets and bikes.",
@@ -24,7 +24,7 @@ export const services: Service[] = [
     thumbnail: "/images/services/cctv/thumb.jpg",
   },
   {
-    slug: "electricFencing",
+    slug: "electric-fencing",
     name: "Electric fencing & Perimeter security",
     shortDescription:
       "Voltage fencing, perimeter alarms and smart doorbells for total perimeter protection.",
@@ -32,7 +32,7 @@ export const services: Service[] = [
     thumbnail: "/images/services/electric-fencing/thumb.jpg",
   },
   {
-    slug: "automaticDoors",
+    slug: "automatic-doors",
     name: "Automatic doors and gates",
     shortDescription:
       "Motorized access control for residential and commercial entries.",
@@ -40,7 +40,7 @@ export const services: Service[] = [
     thumbnail: "/images/services/automatic-doors/thumb.jpg",
   },
   {
-    slug: "solarPower",
+    slug: "solar-power",
     name: "Solar and off-grid power",
     shortDescription:
       "Solar installations keeping your security systems running through outages.",

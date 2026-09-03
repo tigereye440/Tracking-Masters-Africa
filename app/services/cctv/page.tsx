@@ -55,7 +55,7 @@ export default function CctvInstallationPage() {
                 </div>
 
                 <Link
-                    href="/contact"
+                    href="/catalogue?service=cctv-installation"
                     className="mt-6 inline-block rounded-md bg-brand-red px-6 py-3 tex-sm font-medium text-brand-cream hover:bg-brand-red/90">
                         Explore our catalogue
                 </Link>

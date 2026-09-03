@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { offerings } from "../../../lib/data/electricFencing";
+import { offerings } from "../../../lib/data/electric-fencing";
 import CtaBand from "../../../components/home/CtaBand";
 import { off } from "process";
 
-export default function ElectricFencingPage() {
+export default function electricFencingPage() {
     return (
         <>
             <section className="bg-brand-charcoal px-6 py-14 text-center">
@@ -35,6 +35,14 @@ export default function ElectricFencingPage() {
                 </div>
             </section>
 
+            <section className="mx-auto max-w-3xl px-6 py-14">
+                <Link
+                    href="/catalogue?service=electric-fencing"
+                    className="mt-6 inline-block rounded-md border border-brand-maroon px-6 py-3 text-sm font-medium text-brand-maroon hover:bg-brand-maroon/5"
+                    >
+                    Explore our catalogue
+                 </Link>
+            </section>
             <CtaBand />
         </>
     )

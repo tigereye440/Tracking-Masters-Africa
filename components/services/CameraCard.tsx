@@ -14,7 +14,6 @@ export default function CameraCard({ pkg }: {pkg: CameraPackage }) {
                 )}
             </div>
             <p className="mt-1 text-xs text-brand-steel">{pkg.idealFor}</p>
-            <p className="mt-1 text-xs text-brand-steel">Mega 5mp resolution</p>
             <ul className="mt-3 flex-flex-col gap-1 5">
                 {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-xs text-brand-charcoal">

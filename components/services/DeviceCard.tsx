@@ -1,5 +1,5 @@
 import { Check, Fuel, Video, Navigation } from "lucide-react";
-import type { Device } from "../../lib/data/vehicleTracking"
+import type { Device } from "../../lib/data/vehicle-tracking"
 import { features } from "process";
 
 export default function DeviceCard({ device }: { device: Device }) {

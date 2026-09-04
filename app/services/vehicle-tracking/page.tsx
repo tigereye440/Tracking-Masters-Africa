@@ -1,6 +1,5 @@
 "use client"
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { subServices, devices } from "@/lib/data/vehicle-tracking";
 import SubServiceCard from "@/components/services/subServiceCard";
@@ -39,8 +38,13 @@ export default function vehicleTrackingPage() {
       <section className="mx-auto max-w-3xl px-6 pb-14">
         <h2 className="text-lg font-medium text-brand-charcoal">Choose your device</h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
+  
           {devices.map((device) => (
-            <DeviceCard key={device.id} device={device} />
+             <Link
+              href={`/services/vehicle-tracking/${device.id}`}>
+                <DeviceCard key={device.id} device={device} />
+            </Link>
+
           ))}
         </div>
       </section>

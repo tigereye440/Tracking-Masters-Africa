@@ -30,28 +30,52 @@ export const devices: Device[] = [
     {
         id: "901M",
         vehicleType: "Motorbikes, tricycles",
-        features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "SOS alarm"],
+        features: [
+            "Real-time GPS+GSM+GPRS", 
+            "In-app ignition alert", 
+            "Location history", 
+            "Remote engine shutdown"
+        ],
         hasFuelMonitoring: false,
         service: "tracking"
     },
     {
         id: "901AL",
         vehicleType: "Cars",
-        features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "ACC/ignition detection"],
+        features: [
+            "Real-time GPS+GSM+GPRS", 
+            "In-app ignition alert", 
+            "Location history", 
+            "Remote engine shutdown"
+        ],
         hasFuelMonitoring: false,
         service: "tracking"
     },
     {
         id: "906",
         vehicleType: "Cars",
-        features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "SOS alarm", "ACC/ignition detection"],
+        features: [
+            "Real-time GPS+GSM+GPRS", 
+            "Geo-fence alerts", 
+            "SMS & Call alerts", 
+            "SOS alarm", 
+            "ACC/ignition detection", 
+            "Remote engine shutdown"],
         hasFuelMonitoring: false,
         service: "tracking"
     },
     {
         id: "X3",
         vehicleType: "Cars",
-        features: ["Real-time GPS+GSM+GPRS", "Geo-fence alerts", "SOS alarm", "ACC/ignition detection", "Fuel level monitoring"],
+        features: [
+            "Real-time GPS+GSM+GPRS", 
+            "Geo-fence alerts",
+            "SMS & Call alerts", 
+            "SOS alarm", 
+            "ACC/ignition detection", 
+            "Remote engine shutdown",
+            "Fuel level monitoring"
+        ],
         hasFuelMonitoring: true,
         service: "tracking"
     },

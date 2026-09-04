@@ -19,7 +19,7 @@ export default function PortfolioPage() {
           ))}
         </div>
       </section>
-
+      
       <CtaBand />
     </>
   );

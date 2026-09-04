@@ -7,6 +7,7 @@ import { offerings as solarOfferings } from "@/lib/data/solar-power";
 export type Product = {
   id: string;
   name: string;
+  slug: string,
   serviceSlug: string;
   serviceName: string;
   description: string;
@@ -17,14 +18,16 @@ export const catalogue: Product[] = [
   ...devices.map((device) => ({
     id: `vehicle-tracking-${device.id}`,
     name: device.id,
+    slug: device.id,
     serviceSlug: "vehicle-tracking",
     serviceName: "Vehicle tracking",
     description: device.vehicleType,
     tags: device.features,
   })),
   ...cameraPackages.map((pkg) => ({
-    id: `cctv-${pkg.name}`,
+    id: `cctv-installation-${pkg.id}`,
     name: pkg.name,
+    slug: pkg.id,
     serviceSlug: "cctv-installation",
     serviceName: "CCTV installation",
     description: pkg.idealFor,
@@ -33,6 +36,7 @@ export const catalogue: Product[] = [
   ...fencingOfferings.map((offering) => ({
     id: `electric-fencing-${offering.name}`,
     name: offering.name,
+    slug: offering.name,
     serviceSlug: "electric-fencing",
     serviceName: "Electric fencing & perimeter security",
     description: offering.description,
@@ -41,6 +45,7 @@ export const catalogue: Product[] = [
   ...motorTiers.map((tier) => ({
     id: `automatic-doors-${tier.name}`,
     name: tier.name,
+    slug: tier.name,
     serviceSlug: "automatic-doors",
     serviceName: "Automatic doors & gates",
     description: tier.idealFor,
@@ -49,6 +54,7 @@ export const catalogue: Product[] = [
   ...solarOfferings.map((offering) => ({
     id: `solar-power-${offering.name}`,
     name: offering.name,
+    slug: offering.name,
     serviceSlug: "solar-power",
     serviceName: "Solar & off-grid power",
     description: offering.description,

@@ -16,7 +16,7 @@ export const services: Service[] = [
     thumbnail: "/images/services/vehicle-tracking/thumb.jpg",
   },
   {
-    slug: "cctv",
+    slug: "cctv-installation",
     name: "CCTV installation",
     shortDescription:
       "HD cameras with remote monitoring for home, shop and office.",

@@ -3,8 +3,9 @@ import { projects } from "../../../lib/data/portfolio";
 import ImagePlaceholder from "../../../components/ui/ImagePlaceholder";
 import CtaBand from "../../../components/home/CtaBand";
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const param = await params
+  const project = projects.find((p) => p.slug === param.slug);
 
   if (!project) {
     notFound();

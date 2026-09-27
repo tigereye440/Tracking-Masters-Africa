@@ -14,7 +14,7 @@ export const faqs: FaqCategory[] = [
     items: [
       {
         question: "What areas do you cover?",
-        answer: "We're based in Kumasi Accra, and Techiman, and install nationwide across Ghana.",
+        answer: "We&apos;re based in Kumasi Accra, and Techiman, and install nationwide across Ghana.",
       },
       {
         question: "How long has TMA been in operation?",
@@ -26,7 +26,7 @@ export const faqs: FaqCategory[] = [
       },
       {
         question: "How do I get a quote?",
-        answer: "Reach us via WhatsApp, the contact form, or a call — we'll schedule a free site assessment.",
+        answer: "Reach us via WhatsApp, the contact form, or a call — we&apos;ll schedule a free site assessment.",
       },
     ],
   },

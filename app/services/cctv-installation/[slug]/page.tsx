@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, Fuel } from "lucide-react";
+import { Check } from "lucide-react";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { cameraPackages } from "@/lib/data/cctv";
 import CtaBand from "@/components/home/CtaBand";

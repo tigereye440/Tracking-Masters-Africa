@@ -12,17 +12,19 @@ export default function ContactForm() {
         const formData = new FormData(event.currentTarget);
         const payload = Object.fromEntries(formData.entries())
 
+        const form = event.currentTarget;
+
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
-                headers: { "Contect-Type": "application/json" },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload)
             });
 
             if (!response.ok) throw new Error("Request failed");
 
             setStatus("success")
-            event.currentTarget.reset();
+            form.reset();
         } catch {
             setStatus("error")
         }
@@ -58,7 +60,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="service" className="mb-1 block text-sm font-medium text-brand-charcoal">
-          Service you're interested in
+          Service you&apos;re interested in
         </label>
         <select
           id="service"
@@ -97,7 +99,7 @@ export default function ContactForm() {
 
       {status === "success" && (
         <p className="text-sm text-green-700">
-          Message sent. We'll get back to you shortly.
+          Message sent. We&apos;ll get back to you shortly.
         </p>
       )}
       {status === "error" && (

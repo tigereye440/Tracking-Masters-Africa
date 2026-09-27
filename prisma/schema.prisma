@@ -1,0 +1,34 @@
+generator client {
+  provider            = "prisma-client"
+  output              = "../generated/prisma"
+  importFileExtension = "ts"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ContactLead {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  service   String?
+  message   String
+  createdAt DateTime @default(now())
+}
+
+enum TestimonialStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Testimonial {
+  id          String             @id @default(cuid())
+  quote       String
+  serviceSlug String
+  location    String
+  rating      Int
+  status      TestimonialStatus  @default(PENDING)
+  createdAt   DateTime           @default(now())
+}

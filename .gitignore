@@ -16,6 +16,7 @@
 .env
 .env*.local
 *.env
+generated/
 
 # Debugging and Logs (NPM specific)
 npm-debug.log*

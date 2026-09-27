@@ -1,5 +1,5 @@
 export type SubService = {
-    name: String;
+    name: string;
     description: string;
 }
 
@@ -82,14 +82,14 @@ export const devices: Device[] = [
     {
         id: "JC120",
         vehicleType: "Cars",
-        features: ['Real time video feed', "180 degree wide view", "Colission detection", "SOS Alarm", "Driver Monitoring"],
+        features: ["Real time video feed", "180 degree wide view", "Colission detection", "SOS Alarm", "Driver Monitoring"],
         hasFuelMonitoring: false,
         service: "dashcam"
     },
         {
         id: "JC400",
         vehicleType: "Cars",
-        features: ['Real time video feed', "360 degree wide view", "Colission detection", "SOS Alarm", "Driver Monitoring"],
+        features: ["Real time video feed", "360 degree wide view", "Colission detection", "SOS Alarm", "Driver Monitoring"],
         hasFuelMonitoring: false,
         service: "dashcam"
     }

@@ -1,10 +1,11 @@
 "use client";
 
-import { use, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { services } from "@/lib/data/services";
 import { posts } from "@/lib/data/post";
+import InlineSearch from "@/components/search/InlineSearch";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -96,6 +97,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <InlineSearch />
 
           {/* <Link
             href="/contact"
@@ -106,18 +108,19 @@ export default function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button
-          className="text-brand-cream md:hidden"
-          onClick={() => setMobileOpen((open) => !open)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          <button
+            className="text-brand-cream md:hidden"
+            onClick={() => setMobileOpen((open) => !open)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
       </nav>
 
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-white/10 px-6 py-4 md:hidden">
+          <InlineSearch className="mb-4 w-full" />
           <p className="mb-2 text-xs uppercase tracking-wide text-brand-cream/50">
             Services
           </p>

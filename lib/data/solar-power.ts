@@ -6,7 +6,7 @@ export type SolarOffering = {
 export const offerings: SolarOffering[] = [
     {
     name: "Solar panel installation & battery backup",
-    description: "Complete solar panel and battery systems sized to your property's power needs.",
+    description: "Complete solar panel and battery systems sized to your property&apos;s power needs.",
   },
   {
     name: "Security system backup power",

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { locations } from "@/lib/data/locations"
-import { Key } from "lucide-react"
+// import { Key } from "lucide-react"
 
 export default function LocationsMap() {
     const [active, setActive] = useState(locations[0])

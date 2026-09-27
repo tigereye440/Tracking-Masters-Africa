@@ -26,7 +26,7 @@ export default function CctvInstallationPage() {
                 <h2 className="text-lg font-medium text-brand-charcoal">Every camera includes</h2>
                 <div className="mt-4 flex-flex-wrap-gap-2">
                     {baseFeatures.map((feature) => (
-                        <span className="rounded-full border border-brand-steel/30 mx-3 px-1"
+                        <span key={feature} className="rounded-full border border-brand-steel/30 mx-3 px-1"
                         >
                             {feature}
                         </span>

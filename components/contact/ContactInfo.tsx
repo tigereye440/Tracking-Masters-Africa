@@ -7,7 +7,7 @@ export default function ContactInfo() {
             <div className="flex items-start gap-3">
                 <Phone size={18} className="mt-0.5 text-brand-maroon" />
                 <div>
-                    <p className="text-sm-font-medium-text-brand-charcoal">Phone</p>
+                    <p className="text-sm font-medium text-brand-charcoal">Phone</p>
                     <p className="text-sm text-brand-steel">+233 54 447 9545</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@ export default function ContactInfo() {
                 <MapPin size={18} className="mt-0.5 text-brand-maroon" />
                 <div>
                     <p className="text-sm font-medium text-brand-charcoal">Locations</p>
-                    <p className="text-sm text-brand-steel">Kumasi (DVLA) &middot; Accra &middot; Techiman &middot; Nationwide</p>
+                    <p className="text-sm text-brand-steel">Kumasi &middot; Accra &middot; Techiman &middot; Nationwide</p>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@ export default function ContactInfo() {
                 <Clock size={18} className="mt-0.5 text-brand-maroon" />
                 <div>
                     <p className="text-sm font-medium text-brand-charcoal">Hours</p>
-                    <p className="text-sm text-brand-steel">Mon–Sat, 8am–6pm</p>
+                    <p className="text-sm text-brand-steel">Mon-Sat, 8am-6pm</p>
                 </div>
             </div>
         </div>

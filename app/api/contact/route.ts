@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-
+import { prisma } from "@/lib/prisma"
 export async function POST(request: Request) {
 
     const body = await request.json()
@@ -8,9 +8,11 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-
-    // TODO: replace with prisma.contactLead.create({ data: { name, phone, service, message } })
-    console.log("New contact lead:", { name, phone, service, message });
+    await prisma.contactLead.create({
+        data: { name, phone, service, message },
+    });
+    
+    // console.log("New contact lead:", { name, phone, service, message });
 
     return NextResponse.json({ success: true });
 

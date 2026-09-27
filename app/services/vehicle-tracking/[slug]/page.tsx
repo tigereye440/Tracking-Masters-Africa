@@ -5,8 +5,10 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { devices } from "@/lib/data/vehicle-tracking";
 import CtaBand from "@/components/home/CtaBand";
 
-export default function DevicePage({ params }: {  params: { slug: string } }) {
-  const device = devices.find((device) => device.id === params.slug);
+export default async function DevicePage({ params }: {  params:  Promise<{ slug: string }> }) {
+  console.log(params)
+  const param = await params
+  const device = devices.find((device) => device.id === param.slug);
 
   if (!device) {
     notFound();

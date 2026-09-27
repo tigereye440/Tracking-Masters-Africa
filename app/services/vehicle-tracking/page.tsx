@@ -27,7 +27,7 @@ export default function vehicleTrackingPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-12">
-        <h2 className="text-lg font-medium text-brand-charcoal">What's included</h2>
+        <h2 className="text-lg font-medium text-brand-charcoal">What&apos;s included</h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
           {subServices.map((subService) => (
             <SubServiceCard key={subService.description} subService={subService} />
@@ -41,6 +41,7 @@ export default function vehicleTrackingPage() {
   
           {devices.map((device) => (
              <Link
+             key={device.id}
               href={`/services/vehicle-tracking/${device.id}`}>
                 <DeviceCard key={device.id} device={device} />
             </Link>

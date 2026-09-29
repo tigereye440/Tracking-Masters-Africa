@@ -4,14 +4,27 @@ import { prisma } from "@/lib/prisma";
 import { getServiceBySlug } from "@/lib/data/services";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
+
 export default async function BlogPostPage({ 
     params 
 }: { params: Promise<{ slug: string }> 
 }) {
     const { slug } = await params;
-    const post = await prisma.blogPost.findFirst({
-        where: { slug, status: "PUBLISHED"}
-    });
+    let post;
+    try {
+        post = await prisma.blogPost.findFirst({
+            where: { slug, status: "PUBLISHED"}
+        })
+        
+    } catch {
+        return (
+            <section className="mx-auto max-w-2xl px-6 py-14 text-center">
+                <p className="text-sm text-brand-steel">
+                    This page iss temporarily unavailable. Please try again later.
+                </p>
+            </section>
+        );
+    }
 
     if (!post) {
         notFound()

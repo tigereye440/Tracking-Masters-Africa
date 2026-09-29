@@ -1,12 +1,16 @@
 import { prisma } from "@/lib/prisma";
 import TestimonialCard from "@/components/home/TestimonialCard";
 import TestimonialForm from "@/components/testimonials/TestimonialForm";
+import { safeQuery } from "@/lib/safe-query";
 
 export default async function TestimonialsPage() {
-  const testimonials = await prisma.testimonial.findMany({
-    where: { status: "APPROVED" },
-    orderBy: { createdAt: "desc" },
-  });
+  const testimonials = await safeQuery (
+    () =>  prisma.testimonial.findMany({
+      where: { status: "APPROVED" },
+      orderBy: { createdAt: "desc" },
+  }),
+  []
+) 
 
   return (
     <>

@@ -1,11 +1,15 @@
 import { prisma } from "@/lib/prisma";
 import BlogBrowser from "@/components/blog/BlogBrowser";
+import { safeQuery } from "@/lib/safe-query";
 
 export default async function BlogPage() {
-    const posts = await prisma.blogPost.findMany({
-        where: { status: "PUBLISHED" },
-        orderBy: { createdAt: "desc" },
-    })
+    const posts = await safeQuery (
+        () => prisma.blogPost.findMany({
+            where: { status: "PUBLISHED" },
+            orderBy: { createdAt: "desc" },
+    }),
+    []
+)
         
     return (
         <>

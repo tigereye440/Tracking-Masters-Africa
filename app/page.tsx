@@ -5,13 +5,17 @@ import StatsBand from "@/components/home/StatsBand";
 import CtaBand from "@/components/home/CtaBand";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import { safeQuery } from "@/lib/safe-query";
 
 export default async function HomePage() {
-  const testimonials = await prisma.testimonial.findMany({
-    where: { status: "APPROVED" },
-    orderBy: { createdAt: "desc" },
-    take: 3,
-  });
+  const testimonials = await safeQuery( 
+    () => prisma.testimonial.findMany({
+      where: { status: "APPROVED" },
+      orderBy: { createdAt: "desc" },
+      take: 3,
+  }),
+  []
+);
 
   return (
     <>

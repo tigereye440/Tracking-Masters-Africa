@@ -2,10 +2,11 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma"
 
 export default async function AdminDashboard() {
-    const [pendingCount, leadCount, draftCount] = await Promise.all([
+    const [pendingCount, leadCount, draftCount, draftProjectCount] = await Promise.all([
         prisma.testimonial.count({ where: { status: "PENDING" } }),
         prisma.contactLead.count(),
         prisma.blogPost.count({ where: { status: "DRAFT" } }),
+        prisma.project.count({ where: { status: "DRAFT" } }),
     ]);
 
     return (
@@ -32,6 +33,13 @@ export default async function AdminDashboard() {
                     >
                     <p className="text-2xl font-medium text-brand-maroon">{draftCount}</p>
                     <p className="mt-1 text-sm text-brand-charcoal">Draft blog posts</p>
+                </Link>
+                <Link
+                    href="/admin/portfolio"
+                    className="rounded-lg border border-brand-steel/30 bg-white p-5 hover:border-brand-maroon/40"
+                    >
+                    <p className="text-2xl font-medium text-brand-maroon">{draftProjectCount}</p>
+                    <p className="mt-1 text-sm text-brand-charcoal">Draft projects</p>
                 </Link>
             </div>
         </section>

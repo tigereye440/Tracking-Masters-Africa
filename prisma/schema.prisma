@@ -9,15 +9,15 @@ datasource db {
 }
 
 model ContactLead {
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   name      String
   phone     String
   service   String?
   message   String
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
 }
 
-enum TestimonialStatus {
+enum TestimonialStatus { 
   PENDING
   APPROVED
   REJECTED
@@ -51,4 +51,21 @@ model BlogPost {
   readTime    String
   status      PostStatus   @default(DRAFT) 
   createdAt   DateTime     @default(now())
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Project {
+  id          String          @id @default(cuid())
+  slug        String          @unique
+  title       String    
+  serviceSlug String
+  summary     String
+  imageUrl    String?
+  status      ContentStatus   @default(DRAFT)
+  createdAt   DateTime        @default(now())
+
 }

@@ -1,8 +1,17 @@
-import { projects } from "../../lib/data/portfolio";
-import ProjectCard from "../../components/portfolio/ProjectCard";
-import CtaBand from "../../components/home/CtaBand";
+import { prisma } from "@/lib/prisma";
+import ProjectCard from "@/components/portfolio/ProjectCard";
+import CtaBand from "@/components/home/CtaBand";
+import { safeQuery } from "@/lib/safe-query";
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const projects = await safeQuery ( 
+    () => prisma.project.findMany({
+      where: { status: "PUBLISHED" },
+      orderBy: { createdAt: "desc" },
+  }),
+  []
+);
+
   return (
     <>
       <section className="bg-brand-charcoal px-6 py-14 text-center">
@@ -13,13 +22,17 @@ export default function PortfolioPage() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 py-14">
-        <div className="grid gap-4 sm:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+        {projects.length === 0 ? (
+          <p className="text-center text-sm text-brand-steel">No projects yet.</p>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-3">
+            {projects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        )}
       </section>
-      
+
       <CtaBand />
     </>
   );

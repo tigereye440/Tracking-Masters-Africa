@@ -1,9 +1,15 @@
 import { prisma } from "@/lib/prisma";
 
 export default async function AdminLeadsPage() {
-  const leads = await prisma.contactLead.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  let leads = [];
+  try {
+    leads = await prisma.contactLead.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.error(error);
+    leads = []
+  }
 
   return (
     <section className="mx-auto max-w-4xl px-6 py-14">

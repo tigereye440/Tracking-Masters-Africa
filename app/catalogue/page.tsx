@@ -2,13 +2,14 @@ import { catalogue } from "@/lib/data/catalogue";
 import CatalogueBrowser from "@/components/catalogue/CatalogueBrowser";
 import CtaBand from "@/components/home/CtaBand";
 
-export default function CataloguePage({
+export default async function CataloguePage({
     searchParams
 }: {
-    searchParams: { service?: string }
+    searchParams: Promise<{ service?: string }>
 }) {
 
-    const initialSlug = searchParams.service ?? null
+    const params = await searchParams
+    const initialSlug = params.service ?? null
 
     return (
         <>

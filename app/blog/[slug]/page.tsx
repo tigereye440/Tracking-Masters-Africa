@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts } from "@/lib/data/blog";
+import { prisma } from "@/lib/prisma";
 import { getServiceBySlug } from "@/lib/data/services";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-    const param = await params
-    const post = blogPosts.find((p) => p.slug === param.slug);
+export default async function BlogPostPage({ 
+    params 
+}: { params: Promise<{ slug: string }> 
+}) {
+    const { slug } = await params;
+    const post = await prisma.blogPost.findFirst({
+        where: { slug, status: "PUBLISHED"}
+    });
 
     if (!post) {
         notFound()

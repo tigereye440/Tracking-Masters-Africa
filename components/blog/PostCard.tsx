@@ -1,9 +1,16 @@
 import Link from "next/link";
-import type { BlogPost } from "@/lib/data/blog";
 import { getServiceBySlug } from "@/lib/data/services";
 import ImagePlaceholder from "../ui/ImagePlaceholder";
 
-export default function PostCard({ post }: { post: BlogPost }) {
+type PostCardProps = {
+    slug: string;
+    title: string;
+    excerpt: string;
+    serviceSlug: string;
+    readTime: string
+};
+
+export default function PostCard({ post }: { post: PostCardProps }) {
     const service = getServiceBySlug(post.serviceSlug)
 
     return (

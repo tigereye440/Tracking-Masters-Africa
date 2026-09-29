@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { encode } from "punycode";
+
 
 export function middleware(request: NextRequest) {
     const authHeader = request.headers.get("authorization")
@@ -19,8 +19,6 @@ export function middleware(request: NextRequest) {
             headers: { "WWW_Authenticate": 'Basic realm="Admin'}
         });
     }
-
-
 }
 
 

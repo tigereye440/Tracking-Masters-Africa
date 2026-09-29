@@ -5,9 +5,10 @@ import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { cameraPackages } from "@/lib/data/cctv";
 import CtaBand from "@/components/home/CtaBand";
 
-export default function DevicePage({ params }:  { params: { slug: string } }) {
+export default async function DevicePage({ params }:  { params: Promise<{ slug: string }> }) {
 
-  const cameraPackage = cameraPackages.find((camPackage) => camPackage.id === params.slug);
+  const param = await params;
+  const cameraPackage = cameraPackages.find((camPackage) => camPackage.id === param.slug);
 
   if (!cameraPackage) {
     notFound();

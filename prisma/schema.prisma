@@ -23,6 +23,7 @@ enum TestimonialStatus {
   REJECTED
 }
 
+
 model Testimonial {
   id          String             @id @default(cuid())
   quote       String
@@ -31,4 +32,23 @@ model Testimonial {
   rating      Int
   status      TestimonialStatus  @default(PENDING)
   createdAt   DateTime           @default(now())
+}
+
+
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model BlogPost {
+  id          String       @id @default(cuid())
+  slug        String       @unique
+  title       String
+  excerpt     String
+  body        String
+  serviceSlug String
+  readTime    String
+  status      PostStatus   @default(DRAFT) 
+  createdAt   DateTime     @default(now())
 }

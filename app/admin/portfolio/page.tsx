@@ -27,11 +27,11 @@ export default async function AdminBlogPage() {
 
     return (
         <section className="mx-auto max-w 3xl px-6 py-14">
-            <div className="flex flex-items-center justify-center">
+            <div className="flex flex-items-center justify-center mx-2">
                 <h1 className="text-2xl font-medium text-brand-charcoal">Recent installations</h1>
                 <Link
-                    href="/admin/blog/new"
-                    className="rounded-md bg-brand-red py-2 text-sm font-medium text-brand-cream"
+                    href="/admin/portfolio/new"
+                    className="rounded-md bg-brand-red py-2 px-3 text-sm font-medium text-brand-cream"
                 >
                     New project
                 </Link>

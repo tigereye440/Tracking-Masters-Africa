@@ -11,7 +11,7 @@ export default function AdminError({ reset }: { error: Error; reset: () => void 
         onClick={reset}
         className="mt-6 rounded-md border border-brand-steel/40 px-5 py-2.5 text-sm font-medium text-brand-charcoal"
       >
-        Retry
+        Retry Later
       </button>
     </section>
   );

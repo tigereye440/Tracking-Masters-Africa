@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getServiceBySlug } from "@/lib/data/services";
@@ -15,6 +16,7 @@ export default async function BlogPostPage({
         post = await prisma.blogPost.findFirst({
             where: { slug, status: "PUBLISHED"}
         })
+
         
     } catch {
         return (
@@ -41,7 +43,13 @@ export default async function BlogPostPage({
             </div>
             <h1 className="mt-2 text-2xl font-medium text-brand charcoal">{post.title}</h1>
 
-            <ImagePlaceholder className="mt-6 h-64 w-full" />
+            {post.imageUrl ? (
+                <div className="relative mt-6 h-64 w-full overflow-hidden rounded-lg">
+                <Image src={post.imageUrl} alt={post.title} fill className="object-cover" />
+                </div>
+            ) : (
+                <ImagePlaceholder className="mt-6 h-64 w-full" />
+            )}
             
             <div className="mt-6 flex-flex-col-gap-4 text-sm leading-relaxed text-brand-steel">
                 {post.body.split("\n\n").map((paragraph, index) => (

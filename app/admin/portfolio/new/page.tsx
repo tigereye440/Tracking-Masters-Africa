@@ -4,7 +4,6 @@ import { prisma } from "@/lib/prisma";
 import { services } from "@/lib/data/services";
 import { slugify } from "@/lib/utils/slugify";
 import { uploadImage } from "@/lib/utils/upload-image";
-import { FcImageFile } from "react-icons/fc";
 
 async function createProject(formData: FormData) {
     "use server"
@@ -48,7 +47,7 @@ async function createProject(formData: FormData) {
 export default function NewProjectPage() {
         return (
             <section className="mx-auto max-w-2xl px-6 py-14">
-                <h1 className="text-2xl font-medium text-brand-charcoal">New porject</h1>
+                <h1 className="text-2xl font-medium text-brand-charcoal">New project</h1>
 
                 <form action={createProject} className="mt-6 flex flex-col gap-4">
                     <div>

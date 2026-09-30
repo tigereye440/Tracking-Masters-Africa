@@ -48,6 +48,7 @@ model BlogPost {
   excerpt     String
   body        String
   serviceSlug String
+  imageUrl    String?
   readTime    String
   status      PostStatus   @default(DRAFT) 
   createdAt   DateTime     @default(now())
@@ -68,4 +69,16 @@ model Project {
   status      ContentStatus   @default(DRAFT)
   createdAt   DateTime        @default(now())
 
+}
+
+
+
+
+model Faq {
+  id        String        @id @default(cuid())
+  question  String  
+  answer    String
+  category  String
+  status    ContentStatus @default(DRAFT)
+  createdAt DateTime      @default(now())
 }

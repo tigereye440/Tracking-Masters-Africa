@@ -33,7 +33,7 @@ export const services: Service[] = [
   },
   {
     slug: "automatic-doors",
-    name: "Automatic doors and gates",
+    name: "Automated doors and gates",
     shortDescription:
       "Motorized access control for residential and commercial entries.",
     heroImage: "/images/services/automatic-doors/hero.jpg",

@@ -6,11 +6,11 @@ import { safeQuery } from "@/lib/safe-query";
 export default async function PortfolioPage() {
   const projects = await safeQuery ( 
     () => prisma.project.findMany({
-      where: { status: "PUBLISHED" },
-      orderBy: { createdAt: "desc" },
-  }),
-  []
-);
+        where: { status: "PUBLISHED" },
+        orderBy: { createdAt: "desc" },
+    }),
+    []
+  );
 
   return (
     <>

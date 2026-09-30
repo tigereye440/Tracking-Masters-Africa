@@ -5,7 +5,7 @@ export type Post = {
 
 export const posts: Post[] = [
     {
-        post: "faqs",
+        post: "faq",
         name: "FAQs"
     },
     {

@@ -7,7 +7,7 @@ export async function uploadImage(file: File, folder: string): Promise<string | 
     const fileName = `${folder}/${crypto.randomUUID()}.${fileExt}`;
 
     const { error } = await supabaseAdmin.storage
-        .from("uploads")
+        .from("Uploads")
         .upload(fileName, file, { contentType: file.type });
 
     if (error) {
@@ -15,7 +15,7 @@ export async function uploadImage(file: File, folder: string): Promise<string | 
         return null
     }
 
-    const { data } = supabaseAdmin.storage.from("uploads").getPublicUrl(fileName);
+    const { data } = supabaseAdmin.storage.from("Uploads").getPublicUrl(fileName);
     return data.publicUrl;
 
 }

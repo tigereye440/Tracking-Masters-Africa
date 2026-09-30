@@ -7,6 +7,7 @@ export default async function AdminDashboard() {
         prisma.contactLead.count(),
         prisma.blogPost.count({ where: { status: "DRAFT" } }),
         prisma.project.count({ where: { status: "DRAFT" } }),
+        prisma.faq.count({ where: { status: "DRAFT" } })
     ]);
 
     return (
@@ -40,6 +41,13 @@ export default async function AdminDashboard() {
                     >
                     <p className="text-2xl font-medium text-brand-maroon">{draftProjectCount}</p>
                     <p className="mt-1 text-sm text-brand-charcoal">Draft projects</p>
+                </Link>
+                <Link
+                    href="/admin/faqs"
+                    className="rounded-lg border border-brand-steel/30 bg-white p-5 hover:border-brand-maroon/40"
+                    >
+                    <p className="text-2xl font-medium text-brand-maroon">{draftProjectCount}</p>
+                    <p className="mt-1 text-sm text-brand-charcoal">Draft FAQs</p>
                 </Link>
             </div>
         </section>

@@ -2,9 +2,13 @@
 
 import { useState } from "react";
 import { Plus, X } from "lucide-react";
-import type { Faq } from "@/lib/data/faqs";
 
-export default function FaqItem({ faq }: { faq: Faq }) {
+type FaqItemProps = {
+  question: string;
+  answer: string;
+}
+
+export default function FaqItem({ faq }: { faq: FaqItemProps }) {
   const [open, setOpen] = useState(false);
 
   return (

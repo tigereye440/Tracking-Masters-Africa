@@ -8,6 +8,8 @@ export type FaqCategory = {
   items: Faq[];
 };
 
+
+
 export const faqs: FaqCategory[] = [
   {
     category: "General",

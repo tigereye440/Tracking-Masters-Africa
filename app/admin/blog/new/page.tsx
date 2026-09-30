@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { services } from "@/lib/data/services";
 import { slugify } from "@/lib/utils/slugify";
 import { calculateReadTime } from "@/lib/utils/read-time";
+import { uploadImage } from "@/lib/utils/upload-image";
 
 async function createPost(formData: FormData) {
     "use server"
@@ -11,6 +12,7 @@ async function createPost(formData: FormData) {
     const title = formData.get("title") as string;
     const excerpt = formData.get("excerpt") as string;
     const body = formData.get("body") as string
+    const imageFile = formData.get("image") as File
     const serviceSlug = formData.get("serviceSlug") as string;
     const intent = formData.get("intent") as string;
 
@@ -19,12 +21,15 @@ async function createPost(formData: FormData) {
         throw new Error("Invalid service selected");
     }
 
+    const imageUrl = await uploadImage(imageFile, "projects")
+
     await prisma.blogPost.create({
         data: {
             title,
             excerpt,
             body,
             serviceSlug,
+            imageUrl,
             slug: slugify(title),
             readTime: calculateReadTime(body),
             status: intent === "publish" ? "PUBLISHED" : "DRAFT"
@@ -84,7 +89,18 @@ export default function NewBlogPostPage() {
                             ))}   
                         </select>
                     </div>
-
+                    <div>
+                        <label htmlFor="image" className="mb-1 block text-sm font-medium text-brand-charcoal">
+                            Photo (optional)
+                        </label>
+                        <input
+                            id="image"
+                            name="image"
+                            type="file"
+                            accept="image/*"
+                            className="w-full rounded-md border border-brand-steel/40 px-3 py-2 text-sm"
+                        />
+                    </div>
                     <div>
                         <label htmlFor="body" className="mb-1 block text-sm font-medium text-brand-charcoal">
                             Body

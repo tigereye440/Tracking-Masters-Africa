@@ -1,5 +1,3 @@
-import { WhatsApp } from "@/lib/data/handles";
-
 export const businessInfo = {
     name: "Tracking Masters Africa",
     shortName: "TMA",

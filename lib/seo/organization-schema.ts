@@ -1,4 +1,4 @@
-import { businessInfo } from "@/app/business-info";
+import { businessInfo } from "@/lib/data/business-info";
 import { locations } from "@/lib/data/locations";
 
 export function buildOrganizationSchema() {

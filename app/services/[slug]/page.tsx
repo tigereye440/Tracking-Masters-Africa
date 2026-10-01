@@ -21,7 +21,7 @@ export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
 
-export async function generateMetaData({
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>

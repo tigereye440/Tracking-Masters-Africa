@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Check, Fuel } from "lucide-react";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
@@ -31,7 +32,13 @@ export default async function DevicePage({ params }: {  params:  Promise<{ slug:
         </div>
         <p className="mt-1 text-sm text-brand-steel">{device.vehicleType}</p>
 
-        <ImagePlaceholder className="mt-6 h-64 w-full" />
+        {device.image ? (
+            <Image 
+                className="rounded-lg h-64 w-full shrink-0"
+                src={device.image} alt="Flyer for vehicle tracking" width={500} height={500}/>
+        ) 
+        :   <ImagePlaceholder className="h-16 w-16 shrink-0" />
+        }
 
         <section className="mt-8">
           <h2 className="text-lg font-medium text-brand-charcoal">Features</h2>

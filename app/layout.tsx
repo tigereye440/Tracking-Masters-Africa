@@ -3,12 +3,8 @@ import "./globals.css"
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
-
-export const metadata: Metadata = {
-  title: "TMA — Tracking Masters Africa",
-  description:
-    "Vehicle tracking, CCTV, electric fencing, automatic doors and solar power installation across Ghana.",
-};
+import StructuredData from "@/components/seo/StructuredData";
+import { buildOrganizationSchema } from "@/lib/seo/organization-schema";
 
 export default function RootLayout({
   children,
@@ -18,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <StructuredData data={buildOrganizationSchema()} />
         <Navbar />
         <main>{children}</main>
         <Footer />

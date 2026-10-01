@@ -23,7 +23,8 @@ export type Device = {
     vehicleType: string;
     features: string[];
     hasFuelMonitoring: boolean; 
-    service: string
+    service: string,
+    image?: string
 };
 
 export const devices: Device[] = [
@@ -37,7 +38,8 @@ export const devices: Device[] = [
             "Remote engine shutdown"
         ],
         hasFuelMonitoring: false,
-        service: "tracking"
+        service: "tracking",
+        image: "/images/services/vehicle-tracking/901M.jpeg"
     },
     {
         id: "901AL",
@@ -49,7 +51,8 @@ export const devices: Device[] = [
             "Remote engine shutdown"
         ],
         hasFuelMonitoring: false,
-        service: "tracking"
+        service: "tracking",
+        image:"/images/services/vehicle-tracking/901M.jpeg"
     },
     {
         id: "906",
@@ -62,7 +65,8 @@ export const devices: Device[] = [
             "ACC/ignition detection", 
             "Remote engine shutdown"],
         hasFuelMonitoring: false,
-        service: "tracking"
+        service: "tracking",
+        image: "/images/services/vehicle-tracking/906.jpeg"
     },
     {
         id: "X3",
@@ -77,7 +81,8 @@ export const devices: Device[] = [
             "Fuel level monitoring"
         ],
         hasFuelMonitoring: true,
-        service: "tracking"
+        service: "tracking",
+        image:"/images/services/vehicle-tracking/X3.jpeg"
     },
     {
         id: "JC120",

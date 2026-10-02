@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown"
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getServiceBySlug } from "@/lib/data/services";
@@ -51,10 +52,8 @@ export default async function BlogPostPage({
                 <ImagePlaceholder className="mt-6 h-64 w-full" />
             )}
             
-            <div className="mt-6 flex-flex-col-gap-4 text-sm leading-relaxed text-brand-steel">
-                {post.body.split("\n\n").map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                ))}
+            <div className="prose prose-sm mt-6 max-w-none text-brand-steel prose-headings:text-brand-charcoal prose-strong:text-brand-charcoal prose-a:text-brand-maroon">
+                <ReactMarkdown>{post.body}</ReactMarkdown>
             </div>
 
             {service && (

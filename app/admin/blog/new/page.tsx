@@ -110,9 +110,12 @@ export default function NewBlogPostPage() {
                             name="body"
                             rows={12}
                             required
-                            placeholder="Separate paragraphs with a blank line"
+                            placeholder="Supports markdown — ## Heading, **bold**, - list items, [link](url)"
                             className="w-full rounded-md border border-brand-steel/40 px-3 py-2 text-sm focus:border-brand-maroon focus:outline-none"
                         />
+                        <p className="mt-1 text-xs text-brand-steel">
+                            Formatting: ## heading, **bold**, *italic*, - bullet list, [text](url) for links
+                        </p>
                     </div>
                     <div className="flex gap-2">
                         <button

@@ -1,41 +1,48 @@
 import { prisma } from "@/lib/prisma";
+import type { ContactLead } from "@/generated/prisma/client";
 
 export default async function AdminLeadsPage() {
-  let leads = [];
+  let leads: ContactLead[] = [];
+  let failed = false;
+
   try {
     leads = await prisma.contactLead.findMany({
       orderBy: { createdAt: "desc" },
     });
   } catch (error) {
-    console.error(error);
-    leads = []
+    console.error("Failed to load contact leads:", error);
+    failed = true;
   }
 
   return (
     <section className="mx-auto max-w-4xl px-6 py-14">
       <h1 className="text-2xl font-medium text-brand-charcoal">Contact leads</h1>
 
-      {leads.length === 0 && (
+      {failed ? (
+        <p className="mt-4 text-sm text-brand-red">
+          Couldn&apos;t reach the database. Check your connection and try again.
+        </p>
+      ) : leads.length === 0 ? (
         <p className="mt-4 text-sm text-brand-steel">No leads yet.</p>
-      )}
-
-      <div className="mt-6 flex flex-col gap-3">
-        {leads.map((lead) => (
-          <div key={lead.id} className="rounded-lg border border-brand-steel/30 bg-white p-4">
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-medium text-brand-charcoal">{lead.name}</p>
-              <p className="text-xs text-brand-steel">
-                {lead.createdAt.toLocaleDateString()}
+      ) : (
+        <div className="mt-6 flex flex-col gap-3">
+          {leads.map((lead) => (
+            <div key={lead.id} className="rounded-lg border border-brand-steel/30 bg-white p-4">
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium text-brand-charcoal">{lead.name}</p>
+                <p className="text-xs text-brand-steel">
+                  {lead.createdAt.toLocaleDateString()}
+                </p>
+              </div>
+              <p className="mt-1 text-xs text-brand-steel">
+                {lead.phone}
+                {lead.service && ` · ${lead.service}`}
               </p>
+              <p className="mt-2 text-sm text-brand-charcoal">{lead.message}</p>
             </div>
-            <p className="mt-1 text-xs text-brand-steel">
-              {lead.phone}
-              {lead.service && ` · ${lead.service}`}
-            </p>
-            <p className="mt-2 text-sm text-brand-charcoal">{lead.message}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
